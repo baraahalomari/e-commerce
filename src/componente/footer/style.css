@@ -1,0 +1,259 @@
+ h1,
+h2,
+h3,
+h4,
+h5,
+h6 {margin:0.5rem}
+/*a,
+a:hover,
+a:focus,
+a:active {
+text-decoration: none;
+outline: none;
+} */
+
+/* a,
+a:active,
+a:focus {
+color: #333;
+text-decoration: none;
+transition-timing-function: ease-in-out;
+-ms-transition-timing-function: ease-in-out;
+-moz-transition-timing-function: ease-in-out;
+-webkit-transition-timing-function: ease-in-out;
+-o-transition-timing-function: ease-in-out;
+transition-duration: .2s;
+-ms-transition-duration: .2s;
+-moz-transition-duration: .2s;
+-webkit-transition-duration: .2s;
+-o-transition-duration: .2s;
+} */
+
+
+.ulStyle  {
+padding: 15px;
+list-style: none;
+display: flex;
+flex-direction: column;
+position:absolute;
+margin-top: 1rem;
+} 
+
+section {
+    padding: 30px 10px;
+  min-height: 100vh;
+}
+.footer {
+background: linear-gradient(105deg,#ffffff ,#f9f9fa);
+padding-top: 80px;
+padding-bottom: 40px;
+color:rgb(49, 49, 49);
+  
+}
+/*END FOOTER SOCIAL DESIGN*/
+.single_footer{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.single_footer h4 {
+color: rgb(41, 41, 41);
+margin: 0px 30px ;
+font-weight: 700;
+text-transform: uppercase;
+font-size: 20px;
+}
+.single_footer h4::after {
+content: "";
+display: block;
+height: 2px;
+width: 40px;
+background: #fff;
+margin-top: 20px;
+}
+.single_footer p{color:rgb(58, 56, 56);}
+/* .single_footer ul {
+margin-top: 22px;
+padding: 1rem;
+list-style: none;
+} */
+.single_footer ul li{
+    margin-left: 2rem;
+}
+.single_footer ul li a {
+    color: rgb(93, 91, 91);
+    -webkit-transition: all 0.3s ease 0s;
+    
+    line-height: 36px;
+    font-size: 15px;
+    text-transform: capitalize;
+}
+.single_footer ul li a:hover { color: rgb(1,178,238); }
+
+.single_footer_address{}
+.single_footer_address ul{}
+.single_footer_address ul li{color:#fff;}
+.single_footer_address ul li span {
+    font-weight: 400;
+    color: #fff;
+    line-height: 28px;
+}
+.contact_social ul {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+
+/*START NEWSLETTER CSS*/
+
+.signup_form{
+  position: absolute;
+  justify-content: start;
+  margin:40px 40px;
+}
+
+.subscribe {
+    display: block;
+    position: relative;
+    margin-top: 15px;
+    width: 100%;
+}
+.subscribe__input {
+    background: #fff;
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+border: medium none;
+border-radius: 5px;
+color: #333;
+display: block;
+font-size: 15px;
+font-weight: 500;
+height: 60px;
+letter-spacing: 0.4px;
+margin: 0;
+padding: 0 1.5rem 0 1rem;
+text-align: center;
+text-transform: capitalize;
+width: 100%;
+}
+@media only screen and (max-width:768px) { 
+.subscribe__input{padding: 0 50px 0 20px;}
+}
+
+.subscribe__btn {
+background-color: transparent;
+border-radius: 0 25px 25px 0;
+color: #01c7e9;
+cursor: pointer;
+display: flex;
+font-size: 20px;
+height: 60px;
+position: absolute;
+right: 0;
+top: 0;
+width: 60px;
+}
+.subscribe__btn i{transition: all 0.3s ease 0s;}
+@media only screen and (max-width:768px) { 
+.subscribe__btn{right:0px;}
+}
+
+.subscribe__btn:hover i{
+    color:rgb(1,178,238);
+}
+button {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+/*END NEWSLETTER CSS*/
+
+/*START SOCIAL PROFILE CSS*/
+.social_profile {
+  margin-top:40px;
+  display:flex;
+  flex-direction: row;
+}
+.social_profile ul{
+list-style: outside none none;
+margin: 0;
+padding: 0;
+}
+.social_profile ul li{float:left;}
+.social_profile ul li a {
+    text-align: center;
+    border: 0px;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+    margin: 3rem 0.5rem;
+    font-size: 14px;
+    color: rgb(92, 91, 91);
+    border-radius: 30px;
+    width: 50px;
+    height: 50px;
+    line-height: 10px;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid rgba(255, 255, 255, 0.383);
+  
+}
+.social_profile ul li a i{
+display: flex;
+align-items: center;
+justify-content: center; 
+width: 50px;
+height: 50px;  
+}
+/* @media only screen and (max-width:768px) { 
+.social_profile ul li a{margin-right:10px;margin-bottom:10px;}
+}
+@media only screen and (max-width:480px) { 
+.social_profile ul li a{
+    width:40px;
+    height:40px;
+    line-height:40px;
+}
+} */
+.social_profile ul li a:hover{
+background:rgb(1,178,238);
+border: 1px solid rgb(1,178,238);
+color:rgba(109, 106, 106, 0.548);
+border:0px;
+}
+/*END SOCIAL PROFILE CSS*/
+.copyright {
+    margin-top: 70px;
+    padding-top: 40px;
+    color:rgb(75, 74, 74);
+    font-size: 15px;
+    border-top: 1px solid rgba(109, 108, 108, 0.4);
+    text-align: center;
+}
+.copyright a{color:#01c7e9;transition: all 0.2s ease 0s;}
+
+.socialContent{
+  display:flex;
+  flex-direction: column;
+}
+
+
+@media all and (max-width:1000px) { 
+  
+.single_footer{
+    margin:1rem;
+    flex-direction: column;
+    flex:1;
+}
+.ulStyle {
+    position: relative;
+ 
+    margin: 1rem 1rem;
+}
+.footer{
+    padding:20px;
+    display: flex;
+    flex-direction: column;
+}
+}

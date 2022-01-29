@@ -1,21 +1,49 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import SearchIcon from '@mui/icons-material/Search';
+import RoomOutlinedIcon from '@mui/icons-material/RoomOutlined';
 import Badge from '@mui/material/Badge';
+import FormHelperText from '@mui/material/FormHelperText';
+import FormControl from '@mui/material/FormControl';
+import Select from '@mui/material/Select';
+import Fade from '@mui/material/Fade';
+import Menu from '@mui/material/Menu';
+import Button from '@mui/material/Button';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-
+import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
+import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import { Link } from "react-router-dom";
+import { mobile } from '../res';
 const Container = styled.div`
-  height:60px;
+  height:70px;
+  background-color:rgb(1,178,238);
+  color:white;
+  width:100%;
+  ${mobile({ width: '100%' })}
   
+
 `;
 const Wrapper = styled.div`
 padding:10px 20px;
 display:flex;
 `;
+const SecWrapper = styled.div`
+display:flex;
+color:white;
+${mobile({ display: 'none' })};
+`;
+const ResponsiveIcon = styled.div`
+display:flex;
+color:white;
+${mobile({ right: '0px' })};
+`
 const Left = styled.div`
 flex:1;
 display:flex;
 align-items:center
+justify-content:center;
+font-weight:1000;
 `
 const Center = styled.div`
 flex:1;
@@ -24,26 +52,26 @@ text-align:center
 const Right = styled.div`
 flex:1;
 display:flex;
+padding:0px 20px;
 align-items:center;
-justify-content:end;
+justify-content:center;
+color:white;
+${mobile({ padding: '0px', justifySelf: 'end', justifyContent: 'end' })};
 `
-const Languages = styled.div`
-font-size:14px;
+const IconContainer = styled.span`
+padding:10px 10px 0px 10px;
+align-items:center;
+font-size:16px;
+font-weight:bold;
+color:white;
 cursor:pointer;
+`
 
-`
-const SearchContainer = styled.div`
-border: 0.5px solid lightgrey;
-display:flex;
-align-items:center;
-padding:5px;
-margin-left:25px;
-`
-const Input = styled.input`
-border:none
-`
 const Logo = styled.h1`
-font-weight:bold
+font-weight:1500;
+font-size:30px;
+align-items:center;
+justify-content:center;
 `;
 
 const MenuItem = styled.div`
@@ -53,27 +81,236 @@ margin-left:25px
 `
 
 const Navebar = () => {
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl1, setAnchorEl1] = React.useState(null);
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const open1 = Boolean(anchorEl1);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  const handleClose1 = () => {
+    setAnchorEl1(null);
+  };
+  const isMenuOpen = Boolean(anchorEl);
+  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+  const handleMobileMenuClose = () => {
+    setMobileMoreAnchorEl(null);
+  };
+ 
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+    handleMobileMenuClose();
+  };
+
+  const menuId = 'primary-search-account-menu';
+  const renderMenu = (
+    <>
+      <IconContainer>
+        <Button style={{ color: 'white' }}
+          id="fade-button"
+          aria-controls={open ? 'fade-menu' : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? 'true' : undefined}
+          onClick={handleClick}
+        >
+          <RoomOutlinedIcon />
+          Auckland
+          <KeyboardArrowDownIcon />
+        </Button>
+      </IconContainer>
+      <Menu style={{ flexDirection: 'column' }}
+        anchorEl={anchorEl}
+        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+        id={menuId}
+        keepMounted
+        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+        open={isMenuOpen}
+        onClose={handleMenuClose}
+      >
+        <MenuItem onClick={handleMenuClose}>
+        Waikato
+        </MenuItem>
+        <MenuItem onClick={handleMenuClose}>
+        Wellington
+        </MenuItem>
+        <MenuItem onClick={handleMenuClose}>
+        Northland
+        </MenuItem>
+        <MenuItem onClick={handleMenuClose}>
+        Auckland
+        </MenuItem>
+        <MenuItem onClick={handleMenuClose}>
+        Manawatu - Wanganui
+        </MenuItem>
+        <MenuItem onClick={handleMenuClose}>
+        Tauranga
+        </MenuItem>
+        <MenuItem onClick={handleMenuClose}>
+        Rotorua - Taupoa
+        </MenuItem>
+      </Menu>
+    </>
+  );
+
+
+  const mobileMenuId = 'primary-search-account-menu-mobile';
+  const renderMobileMenu = (
+    <>
+      <IconContainer>
+              <Button style={{ color: 'white' }}
+               
+               
+                onClick={handleClick}
+              >
+                <PermIdentityOutlinedIcon />
+                <KeyboardArrowDownIcon />
+              </Button>
+            </IconContainer>
+    <Menu
+      anchorEl={mobileMoreAnchorEl}
+      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+      id={mobileMenuId}
+      keepMounted
+      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+      open={isMobileMenuOpen}
+      onClose={handleMobileMenuClose}
+    >
+   <MenuItem style={{ color: 'black', border: '1px solid', padding: '5px', left: '5px' }} >My Account</MenuItem>
+              <MenuItem  >Gifts</MenuItem>
+              <MenuItem  >Profile</MenuItem>
+              <MenuItem  >My Subscriptions</MenuItem>
+              <MenuItem  >My Purchases</MenuItem>
+              <MenuItem  >Logout</MenuItem>
+    </Menu>
+    </>
+  );
+
+
+
   return (
     <Container>
       <Wrapper>
+
         <Left>
-          <Languages>EN</Languages>
-          <SearchContainer>
-            <Input />
-            <SearchIcon style={{color: 'gray',fontSize:'16px'}} />
-          </SearchContainer>
+          <Logo>GrabOne</Logo>
         </Left>
         <Center>
-          <Logo>carpenter</Logo>
         </Center>
         <Right>
-          <MenuItem>Register</MenuItem>
+
+          <ResponsiveIcon>
+
+            {renderMenu}
+            {/* <IconContainer>
+              <Button style={{ color: 'white' }}
+                id="fade-button"
+                aria-controls={open ? 'fade-menu' : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? 'true' : undefined}
+                onClick={handleClick}
+              >
+                <RoomOutlinedIcon />
+                Auckland
+                <KeyboardArrowDownIcon />
+              </Button>
+            </IconContainer> */}
+          </ResponsiveIcon>
+          {/* <Menu style={{ color: 'black', border: '1px solid', margin: '0px', display: 'flex', flexDirection: 'column' }}
+            // id="fade-menu"
+            // MenuListProps={{
+            //   'aria-labelledby': 'fade-button',
+            // }}
+            anchorEl={anchorEl}
+            open={open}
+            onClose={handleClose}
+            TransitionComponent={Fade}
+          >
+            <MenuItem style={{ color: 'black', border: '0.5px solid', padding: '5px', left: '5px', fontSize: '19px', fontWeight: '600' }} >Waikato</MenuItem>
+            <MenuItem style={{ color: 'black', border: '1px solid', padding: '5px', left: '5px', display: 'flex', flexDirection: 'column' }} >Wellington</MenuItem>
+            <MenuItem style={{ color: 'black', border: '1px solid', padding: '5px', left: '5px', display: 'flex', flexDirection: 'column' }} >Northland</MenuItem>
+            <MenuItem style={{ color: 'black', border: '1px solid', padding: '5px', left: '5px', display: 'flex', flexDirection: 'column' }} >Auckland</MenuItem>
+            <MenuItem style={{ color: 'black', border: '1px solid', padding: '5px', left: '5px', display: 'flex', flexDirection: 'column' }} >Manawatu - Wanganui</MenuItem>
+            <MenuItem style={{ color: 'black', border: '1px solid', padding: '5px', left: '5px', display: 'flex', flexDirection: 'column' }} >Tauranga</MenuItem>
+            <MenuItem style={{ color: 'black', border: '1px solid', padding: '5px', left: '5px', display: 'flex', flexDirection: 'column' }} >Rotorua - Taupoa</MenuItem>
+
+          </Menu> */}
+          <SecWrapper>
+            <IconContainer>
+              <FavoriteBorderIcon />
+            </IconContainer>
+            <IconContainer>
+              <ShoppingCartOutlinedIcon />
+            </IconContainer>
+            {renderMobileMenu}
+            {/* <IconContainer>
+              <Button style={{ color: 'white' }}
+                id="fade-button"
+                aria-controls={open ? 'fade-menu' : undefined}
+                aria-haspopup="true"
+                aria-expanded={open ? 'true' : undefined}
+                onClick={handleClick}
+              >
+                <PermIdentityOutlinedIcon />
+                <KeyboardArrowDownIcon />
+              </Button>
+            </IconContainer> */}
+            {/* <Menu style={{ color: 'black', border: '1px solid', margin: '0px', display: 'flex', flexDirection: 'column' }}
+
+              anchorEl={anchorEl1}
+              open={open1}
+              onClose={handleClose1}
+            // TransitionComponent={Fade}
+            >
+              <MenuItem style={{ color: 'black', border: '1px solid', padding: '5px', left: '5px' }} >My Account</MenuItem>
+              <MenuItem style={{ color: 'black', border: '1px solid', padding: '5px', left: '5px' }} >Gifts</MenuItem>
+              <MenuItem style={{ color: 'black', border: '1px solid', padding: '5px', left: '5px' }} >Profile</MenuItem>
+              <MenuItem style={{ color: 'black', border: '1px solid', padding: '5px', left: '5px' }} >My Subscriptions</MenuItem>
+              <MenuItem style={{ color: 'black', border: '1px solid', padding: '5px', left: '5px' }} >My Purchases</MenuItem>
+              <MenuItem style={{ color: 'black', border: '1px solid', padding: '5px', left: '5px' }} >Logout</MenuItem>
+
+            </Menu> */}
+            <IconContainer>
+              <span style={{ color: 'white', display: 'flex', alignItems: 'center' }}>
+
+
+                <EmailOutlinedIcon />
+                Subscribe
+              </span>
+            </IconContainer>
+          </SecWrapper>
+          {/* <FormControl sx={{ m: 1, minWidth: 120 }}>
+        <Select style={{ borderStyle: 'none' }}
+          value=""
+          onChange=""
+          displayEmpty
+          inputProps={{ 'aria-label': 'Without label' }}
+        >
+          <MenuItem value="">
+            <RoomOutlinedIcon/>
+            Auckland
+          </MenuItem>
+          <MenuItem >Auckland</MenuItem>
+          <MenuItem >Waikato</MenuItem>
+          <MenuItem >Wellington</MenuItem>
+          <MenuItem >Northland</MenuItem>
+          <MenuItem >Manawatu - Wanganui</MenuItem>
+          <MenuItem >Tauranga</MenuItem>
+          <MenuItem >Rotorua - Taupoa</MenuItem>
+        </Select>
+       
+      </FormControl> */}
+          {/* <MenuItem>Register</MenuItem>
           <MenuItem>Login</MenuItem>
           <MenuItem>
             <Badge badgeContent={4} color="primary">
               <ShoppingCartOutlinedIcon color="action" />
             </Badge>
-          </MenuItem>
+          </MenuItem> */}
         </Right>
       </Wrapper>
     </Container>

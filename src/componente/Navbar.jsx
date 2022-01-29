@@ -1,11 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import RoomOutlinedIcon from '@mui/icons-material/RoomOutlined';
-import Badge from '@mui/material/Badge';
-import FormHelperText from '@mui/material/FormHelperText';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
-import Fade from '@mui/material/Fade';
 import Menu from '@mui/material/Menu';
 import Button from '@mui/material/Button';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -13,7 +8,6 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
-import { Link } from "react-router-dom";
 import { mobile } from '../res';
 const Container = styled.div`
   height:70px;
@@ -83,19 +77,13 @@ margin-left:25px
 const Navebar = () => {
 
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const [anchorEl1, setAnchorEl1] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-  const open1 = Boolean(anchorEl1);
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-  const handleClose1 = () => {
-    setAnchorEl1(null);
-  };
+
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
   const handleMobileMenuClose = () => {

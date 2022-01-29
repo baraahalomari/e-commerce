@@ -107,7 +107,7 @@ padding: 0 16px;
 .cardActions {
 padding: 0 16px 8px 16px;
 display: flex;
-justify-content: end;
+justify-content: flex-end;
 }
 .cardButton{
 font-size:17px;

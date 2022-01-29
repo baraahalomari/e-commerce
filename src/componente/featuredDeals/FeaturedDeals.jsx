@@ -1,6 +1,5 @@
 import React from 'react';
 import { Card, CardActions, CardContent, CardMedia, Button, Typography, Grid } from '@material-ui/core';
-import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';

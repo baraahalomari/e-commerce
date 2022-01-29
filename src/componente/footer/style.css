@@ -99,11 +99,7 @@ list-style: none;
     color: #fff;
     line-height: 28px;
 }
-.contact_social ul {
-    list-style: outside none none;
-    margin: 0;
-    padding: 0;
-}
+
 
 /*START NEWSLETTER CSS*/
 
@@ -113,12 +109,7 @@ list-style: none;
   margin:40px 40px;
 }
 
-.subscribe {
-    display: block;
-    position: relative;
-    margin-top: 15px;
-    width: 100%;
-}
+
 .subscribe__input {
     background: #fff;
 box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);

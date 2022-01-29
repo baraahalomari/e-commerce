@@ -62,12 +62,7 @@ background-blend-mode:darken;
 .card:hover .discriptin .centered{
   color: rgb(255, 255, 255);
 }
-.border {
-  border: solid;
-}
-.fullHeightCard {
-  height: 100%;
-}
+
 .card {
   display: flex;
   flex-direction: column;

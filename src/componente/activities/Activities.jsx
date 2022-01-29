@@ -9,8 +9,8 @@ import {mobileSmall} from '../../res';
 
 const FirstContainer = styled.div`
 display: flex;
-margin:40px 20px;
-flex-direction:column;
+margin: 40px 20px;
+flex-direction: column;
 `;
 const SecondContainer = styled.div`
 display:flex;
@@ -53,7 +53,7 @@ const Activities = () => {
               <div className="overlay2">
                 <Button style={{ color: 'white' }} size="small" ><FavoriteBorderIcon className="icon" /></Button>
               </div>
-              <div class="centered">{post.details}</div>
+              <div className="centered">{post.details}</div>
               <div className="bottom-left">FREE DELIVERY</div>
               </div>
               <Typography className="title" gutterBottom variant="h5" component="h2" >{post.title}</Typography>

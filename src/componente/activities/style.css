@@ -10,9 +10,6 @@
   }
   .discriptin{
     position: relative;
-  
-    
-    
   }
   .centered {
     position: absolute;
@@ -34,9 +31,7 @@
   .card:hover .discriptin .centered{
     color: rgb(255, 255, 255);
   }
-  .border {
-    border: solid;
-  }
+ 
   .fullHeightCard {
     height: 100%;
   }
@@ -77,9 +72,7 @@
   padding: 15px 10px;
   font-size:5px;
   }
-  .nameColor{
-    color:rgb(1, 179, 238);
-  }
+ 
   .cardActions {
   /* padding: 0 16px 8px 16px; */
   display: flex;

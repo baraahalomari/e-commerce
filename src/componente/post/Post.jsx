@@ -62,20 +62,15 @@ const Post = () => {
                 <div className="overlay2">
                   <Button style={{ color: 'white' }} size="small" ><FavoriteBorderIcon className="icon" /></Button>
                 </div>
-                <div class="centered">{post.details}</div>
-                <div class="bottom-center"><KeyboardArrowUpIcon /></div>
+                <div className="centered">{post.details}</div>
+                <div className="bottom-center"><KeyboardArrowUpIcon /></div>
               </div>
-
               <Typography className="title" gutterBottom variant="h5" component="h2" >{post.title}</Typography>
               <CardContent>
                 <Typography variant="body2" className="nameColor" component="p" >{post.name}</Typography>
                 <Typography variant="body2" color="textSecondary" component="p" >{post.description}</Typography>
               </CardContent>
-
-
               <CardActions className="cardActions">
-
-
                 <Button className="cardButton" >from <br />  {post.price}</Button>
               </CardActions>
             </Card>

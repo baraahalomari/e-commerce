@@ -1,0 +1,18 @@
+.discoverCont{
+  border: 1px solid #adadad;
+  background-color: #fff;
+  padding: 10px;
+  min-width: 96px;
+  
+}
+
+.discoverLi{
+ 
+
+  border: 1px solid #adadad;
+  background-color: #fff;
+  padding: 10px;
+  left: 100%;
+    width: 400px;
+    top: 0px;
+}

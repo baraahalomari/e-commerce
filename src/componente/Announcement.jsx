@@ -1,20 +1,24 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
-height:30px;
-background-color:teal;
-color:white;
+height:300px;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:14px;
-font-weight:500px;
+
 `
 
+const Img = styled.img`
+height:80%;
+width:96%;
+border-radius: 50px 50px 0px 50px;
+
+`;
 const Announcement = () => {
   return (
     <Container>
-      super Deal! Free shipping on Orders over 50$
+      <Img src="https://mediacdn.grabone.co.nz/asset/245jDlRR8j" alt="annucement" />
+      {/* <img src={"./annucement.jpg"} alt="annucement" /> */}
     </Container>
   );
 };

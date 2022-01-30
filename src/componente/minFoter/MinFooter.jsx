@@ -18,6 +18,7 @@ width: 100%;
 height: 60px;
 background-color: rgb(250, 250, 250);
 position: fixed;
+z-index: 999;
 bottom: 0;
 display: none;  
 align-items: center;

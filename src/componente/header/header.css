@@ -9,8 +9,9 @@ a {
     /*Remove underline on anchors*/
 }
 ul {
+  top:40px;
     list-style: none;
-
+    z-index: 999;
     display:flex;    
     /* Rmove list styles*/
 }
@@ -20,6 +21,7 @@ ul {
     padding: 5px;
  
 }
+
 .navContainer nav {
     max-width: 920px;
     margin: auto;
@@ -61,12 +63,18 @@ nav >ul >li >ul >li >ul>li>ul {
     border: 1px solid #adadad;
     background-color: #fff;
 }
-
+ul li a:hover{
+  color:rgb(48,207,254);
+}
 nav >ul >li:hover >ul,
 nav >ul >li >ul >li:hover >ul,
 nav >ul >li >ul >li>ul>li:hover ul {
     display: block;
     
+}
+.navContainer:hover nav ul li a{
+display: block;
+z-index: 2;
 }
 nav li {
   position: relative;

@@ -4,37 +4,39 @@ import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import {mobile} from '../res';
 
 const Container = styled.div`
-height:100px;
+height:150px;
 background-color:white;
 width:100wv;
 display:flex;
-margin:20px 15px;
+flex-wrap: wrap;
+margin:2rem 1.5rem;
 box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
 position:relative;
-justify-content: space-around;
-${mobile({flexDirection: 'column',alignItems: 'center',justifyContent: 'center',width: '100wv'})}
+justify-content: start;
+${mobile({flexDirection: 'column',width: '100wv'})}
 `;
 const Paragraph = styled.span`
 color:rgb(1,178,238);
 font-size:24px;
 font-weight:bold;
-justify-content:center;
 flex:1;
-margin-left:20px;
-${mobile({fontSize: '17px'})}
+justify-content:start;
+padding:1rem;
+margin-left:1rem;
+${mobile({position:'absolute'})}
 `;
 
 const SearchContainer = styled.div`
 border: 0.5px solid lightgrey;
-border-radius: 5px;
+border-radius: 5px ;
 display:flex;
 align-items:center;
 box-shadow:0px 1px 0px 1px rgba(0,0,0,0.12);
 width:45%;
-margin:30px 20px;
-padding:10px;
+margin:3em 2rem;
+padding:1rem;
 position:relative;
-${mobile({flex: '1',position:'absolute',margin:'auto'})}
+${mobile({flex: '1',position:'absolute',marginTop:'4.5rem',width:'65%'})}
 `;
 const Input = styled.input`
 margin-left:8px;
@@ -48,7 +50,9 @@ const Button = styled.button`
 position:absolute;
 right:0;
 padding :10px;
+border-radius: 0px 5px 5px 0px;
 width:8rem;
+height:100%;
 font-size:16px;
 font-weight:bold;
 color:white;

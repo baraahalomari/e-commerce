@@ -37,18 +37,15 @@ flex:1;
 display:flex;
 align-items:center
 justify-content:center;
-font-weight:1000;
+font-weight:900;
 `
-const Center = styled.div`
-flex:1;
-text-align:center
-`
+
 const Right = styled.div`
 flex:1;
 display:flex;
 padding:0px 20px;
 align-items:center;
-justify-content:center;
+justify-content:end;
 color:white;
 ${mobile({ padding: '0px', justifySelf: 'end', justifyContent: 'end' })};
 `
@@ -71,25 +68,39 @@ justify-content:center;
 const MenuItem = styled.div`
 font-size:14px;
 cursor:pointer;
-margin-left:25px 
-`
+padding-left:1rem; 
+color: rgb(79,88,100);
+&:hover {
+  color:rgb(48,207,254);
+}
+`;
+const DropDown = styled.div`
+display:flex;
+flex-direction:column;
+position:relative;
+padding:0px ;
+width:100%;
+
+margin:0px;
+`;
 
 const Navebar = () => {
 
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
+
+  const isMenuOpen = Boolean(anchorEl);
+  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
-
-  const isMenuOpen = Boolean(anchorEl);
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
   };
- 
+  const handleMobileMenuOpen = (event) => {
+    setMobileMoreAnchorEl(event.currentTarget);
+  };
   const handleMenuClose = () => {
     setAnchorEl(null);
     handleMobileMenuClose();
@@ -100,18 +111,14 @@ const Navebar = () => {
     <>
       <IconContainer>
         <Button style={{ color: 'white' }}
-          id="fade-button"
-          aria-controls={open ? 'fade-menu' : undefined}
-          aria-haspopup="true"
-          aria-expanded={open ? 'true' : undefined}
           onClick={handleClick}
         >
-          <RoomOutlinedIcon />
+          <RoomOutlinedIcon style={{ paddingRight: '4px' }} />
           Auckland
-          <KeyboardArrowDownIcon />
+          <KeyboardArrowDownIcon style={{ paddingLeft: '4px' }} />
         </Button>
       </IconContainer>
-      <Menu style={{ flexDirection: 'column' }}
+      <Menu style={{ top: '47px' }}
         anchorEl={anchorEl}
         anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
         id={menuId}
@@ -120,27 +127,32 @@ const Navebar = () => {
         open={isMenuOpen}
         onClose={handleMenuClose}
       >
-        <MenuItem onClick={handleMenuClose}>
-        Waikato
+        <DropDown>
+        <MenuItem 
+        style={{  padding: '10px 15px'}} 
+        onClick={handleMenuClose}
+        >
+          Waikato
         </MenuItem>
-        <MenuItem onClick={handleMenuClose}>
-        Wellington
+        <MenuItem style={{ borderTop: '1px solid lightgrey', padding: '10px 15px'}} onClick={handleMenuClose}>
+          Wellington
         </MenuItem>
-        <MenuItem onClick={handleMenuClose}>
-        Northland
+        <MenuItem style={{ borderTop: '1px solid lightgrey', padding: '10px 15px'}} onClick={handleMenuClose}>
+          Northland
         </MenuItem>
-        <MenuItem onClick={handleMenuClose}>
-        Auckland
+        <MenuItem style={{ borderTop: '1px solid lightgrey', padding: '10px 15px'}} onClick={handleMenuClose}>
+          Auckland
         </MenuItem>
-        <MenuItem onClick={handleMenuClose}>
-        Manawatu - Wanganui
+        <MenuItem style={{  borderTop: '1px solid lightgrey', padding: '10px 15px'}} onClick={handleMenuClose}>
+          Manawatu - Wanganui
         </MenuItem>
-        <MenuItem onClick={handleMenuClose}>
-        Tauranga
+        <MenuItem style={{ borderTop: '1px solid lightgrey', padding: '10px 15px'}} onClick={handleMenuClose}>
+          Tauranga
         </MenuItem>
-        <MenuItem onClick={handleMenuClose}>
-        Rotorua - Taupoa
+        <MenuItem style={{  borderTop: '1px solid lightgrey', padding: '10px 15px'}} onClick={handleMenuClose}>
+          Rotorua - Taupoa
         </MenuItem>
+        </DropDown>
       </Menu>
     </>
   );
@@ -150,31 +162,32 @@ const Navebar = () => {
   const renderMobileMenu = (
     <>
       <IconContainer>
-              <Button style={{ color: 'white' }}
-               
-               
-                onClick={handleClick}
-              >
-                <PermIdentityOutlinedIcon />
-                <KeyboardArrowDownIcon />
-              </Button>
-            </IconContainer>
-    <Menu
-      anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-      id={mobileMenuId}
-      keepMounted
-      transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-      open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
-   <MenuItem style={{ color: 'black', border: '1px solid', padding: '5px', left: '5px' }} >My Account</MenuItem>
-              <MenuItem  >Gifts</MenuItem>
-              <MenuItem  >Profile</MenuItem>
-              <MenuItem  >My Subscriptions</MenuItem>
-              <MenuItem  >My Purchases</MenuItem>
-              <MenuItem  >Logout</MenuItem>
-    </Menu>
+        <Button style={{ color: 'white' }}
+          aria-controls={mobileMenuId}
+          onClick={handleMobileMenuOpen}
+        >
+          <PermIdentityOutlinedIcon />
+          <KeyboardArrowDownIcon />
+        </Button>
+      </IconContainer>
+      <Menu style={{ top: '47px' }}
+        anchorEl={mobileMoreAnchorEl}
+        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+        id={mobileMenuId}
+        keepMounted
+        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+        open={isMobileMenuOpen}
+        onClose={handleMobileMenuClose}
+      >
+        <DropDown>
+        <MenuItem style={{  padding: '10px 15px'}}  onClick={handleMobileMenuClose} >My Account</MenuItem>
+        <MenuItem style={{ borderTop: '1px solid lightgrey', padding: '10px 15px'}} onClick={handleMobileMenuClose} >Gifts</MenuItem>
+        <MenuItem style={{ borderTop: '1px solid lightgrey', padding: '10px 15px'}} onClick={handleMobileMenuClose} >Profile</MenuItem>
+        <MenuItem style={{ borderTop: '1px solid lightgrey', padding: '10px 15px'}} onClick={handleMobileMenuClose} >My Subscriptions</MenuItem>
+        <MenuItem style={{  borderTop: '1px solid lightgrey', padding: '10px 15px'}} onClick={handleMobileMenuClose} >My Purchases</MenuItem>
+        <MenuItem style={{  borderTop: '1px solid lightgrey', padding: '10px 15px'}} onClick={handleMobileMenuClose}>Logout</MenuItem>
+        </DropDown>
+      </Menu>
     </>
   );
 
@@ -187,8 +200,7 @@ const Navebar = () => {
         <Left>
           <Logo>GrabOne</Logo>
         </Left>
-        <Center>
-        </Center>
+
         <Right>
 
           <ResponsiveIcon>
@@ -266,7 +278,7 @@ const Navebar = () => {
               <span style={{ color: 'white', display: 'flex', alignItems: 'center' }}>
 
 
-                <EmailOutlinedIcon />
+                <EmailOutlinedIcon style={{ paddingRight: '4px' }} />
                 Subscribe
               </span>
             </IconContainer>

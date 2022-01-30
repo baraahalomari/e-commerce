@@ -11,17 +11,17 @@ const Footer = () => {
       
         <div class="container">
           <div class="row">
-            <Grid container alignItems="stretch" spacing={3}>
+            <Grid container alignItems="stretch" spacing={4}>
             <Grid item xs={12} sm={6} md={4} lg={3} >
               <div class="col-lg-4 col-sm-4 col-xs-12">
                 <div class="single_footer">
-                  <h4>Services</h4>
+                  <h4>GrabOne</h4>
                   <ul className="ulStyle">
-                    <li><a href="#">Lorem Ipsum</a></li>
-                    <li><a href="#">Simply dummy text</a></li>
-                    <li><a href="#">The printing and typesetting </a></li>
-                    <li><a href="#">Standard dummy text</a></li>
-                    <li><a href="#">Type specimen book</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Terms & Returns</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Gift Cards</a></li>
                   </ul>
                 </div>
               </div>
@@ -29,13 +29,25 @@ const Footer = () => {
             <Grid item xs={12} sm={6} md={4} lg={3} >
               <div class="col-md-4 col-sm-4 col-xs-12">
                 <div class="single_footer single_footer_address">
-                  <h4>Page Link</h4>
+                  <h4>My Account</h4>
                   <ul className="ulStyle">
-                    <li><a href="#">Lorem Ipsum</a></li>
-                    <li><a href="#">Simply dummy text</a></li>
+                    <li><a href="#">My Account</a></li>
+                    <li><a href="#">My Cart</a></li>
                     <li><a href="#">The printing and typesetting </a></li>
-                    <li><a href="#">Standard dummy text</a></li>
-                    <li><a href="#">Type specimen book</a></li>
+                    <li><a href="#">My Coupons</a></li>
+                    <li><a href="#">FAQ</a></li>
+                  </ul>
+                </div>
+              </div>
+            </Grid>
+            <Grid item xs={12} sm={6} md={4} lg={3} >
+              <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="single_footer single_footer_address">
+                  <h4>Merchants</h4>
+                  <ul className="ulStyle">
+                    <li><a href="#">Run a Deal</a></li>
+                    <li><a href="#">Merchant Centre</a></li>
+                  
                   </ul>
                 </div>
               </div>
@@ -67,7 +79,7 @@ const Footer = () => {
           </div>
           <div class="row">
             <div class="col-lg-12 col-sm-12 col-xs-12">
-              <p class="copyright">Copyright © 2019 <a href="#">Akdesign</a>.</p>
+              <p class="copyright"><a href="#">Privacy Policy </a>Copyright © 2022 GrabOne Limited .</p>
             </div>
           </div>
         </div>

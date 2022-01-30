@@ -8,13 +8,14 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
-import { mobile } from '../res';
+import { mobile ,mobileSmall} from '../res';
 const Container = styled.div`
   height:70px;
   background-color:rgb(1,178,238);
   color:white;
   width:100%;
   ${mobile({ width: '100%' })}
+  ${mobileSmall({ width: '100wv',position:'relative',margin:'0px' })}
   
 
 `;

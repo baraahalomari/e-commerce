@@ -11,7 +11,6 @@ const Container = styled.div`
 display:'none';
 position:relative;
 width:100wv;
-${mobileSmall({ width: '100wv' })};
 ${mobile({ display: 'flex' })};
 `
 const Wrapper = styled.div`
@@ -24,8 +23,6 @@ bottom: 0;
 display: none;  
 align-items: center;
 ${mobile({ display: 'flex' })};
-${mobileSmall({ width: '100wv' })};
-;
 `
 
 const MinFooter = () => {

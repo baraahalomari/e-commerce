@@ -14,7 +14,7 @@ box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
 position:relative;
 justify-content: start;
 ${mobile({flexDirection: 'column',width: '100wv'})};
-${mobileSmall({height: '185px'})};
+${mobileSmall({height: '190px'})};
 `;
 const Paragraph = styled.span`
 color:rgb(1,178,238);
@@ -38,7 +38,7 @@ margin:3em 2rem;
 padding:1rem;
 position:relative;
 ${mobile({flex: '1',position:'absolute',marginTop:'4.5rem',width:'65%'})};
-${mobileSmall({marginTop:'5.5rem'})};
+${mobileSmall({marginTop:'6.5rem'})};
 `;
 const Input = styled.input`
 margin-left:8px;

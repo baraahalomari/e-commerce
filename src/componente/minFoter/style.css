@@ -1,21 +1,17 @@
-
-
 .cataguro{
   flex: 1;
-  margin: 5px 5px 5px 5px;
+  margin: 0.5rem 0.5rem 0.5rem 1rem;
   padding: 5px;
-  align-items: center;
   justify-content: space-between;
 }
 
 @media (max-width:500px) {
-  
 .cataguro{
-  position: absolute;
+width:10px;
   flex: 1;
-  margin: 5px 5px 5px 5px;
+  margin: 0.5rem 0.5rem 0.5rem 1rem;
   padding: 5px;
-  align-items: center;
   justify-content: space-between;
+  z-index: 999;
 }
 }

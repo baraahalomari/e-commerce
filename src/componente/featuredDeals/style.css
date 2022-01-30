@@ -67,6 +67,14 @@ padding: 15px 10px;
 font-size:19px;
 color:rgb(79,88,100);
 font-weight: 400;
+overflow: hidden;
+text-overflow: ellipsis;
+display: -webkit-box;
+-webkit-line-clamp: 1; 
+line-clamp: 1; 
+-webkit-box-orient: vertical; 
+max-height: 0.8em; /* (Number of lines you want visible) * (line-height) */
+line-height: 0.8em;
 }
 .nameColor{
   color:rgb(1, 179, 238);

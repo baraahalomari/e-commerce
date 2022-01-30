@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
-import {mobile} from '../res';
+import {mobile,mobileSmall} from '../res';
 
 const Container = styled.div`
 height:150px;
@@ -13,7 +13,8 @@ margin:2rem 1.5rem;
 box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.75);
 position:relative;
 justify-content: start;
-${mobile({flexDirection: 'column',width: '100wv'})}
+${mobile({flexDirection: 'column',width: '100wv'})};
+${mobileSmall({height: '185px'})};
 `;
 const Paragraph = styled.span`
 color:rgb(1,178,238);
@@ -36,7 +37,8 @@ width:45%;
 margin:3em 2rem;
 padding:1rem;
 position:relative;
-${mobile({flex: '1',position:'absolute',marginTop:'4.5rem',width:'65%'})}
+${mobile({flex: '1',position:'absolute',marginTop:'4.5rem',width:'65%'})};
+${mobileSmall({marginTop:'5.5rem'})};
 `;
 const Input = styled.input`
 margin-left:8px;

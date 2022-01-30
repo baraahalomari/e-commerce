@@ -2,7 +2,7 @@
 
 .cataguro{
   flex: 1;
-  margin: 10px 10px 10px 40px;
+  margin: 5px 5px 5px 5px;
   padding: 5px;
   align-items: center;
   justify-content: space-between;
@@ -11,8 +11,9 @@
 @media (max-width:500px) {
   
 .cataguro{
+  position: absolute;
   flex: 1;
-  margin: 10px 10px 10px 40px;
+  margin: 5px 5px 5px 5px;
   padding: 5px;
   align-items: center;
   justify-content: space-between;

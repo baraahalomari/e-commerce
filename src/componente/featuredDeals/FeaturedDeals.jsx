@@ -43,7 +43,7 @@ const FeaturedDeals = () => {
     <FirstContainer>
       <SecondContainer>
         <Title>Featured Auckland Deals</Title>
-        <ButtonView>view More <ArrowForwardIosIcon /> </ButtonView>
+        <ButtonView>View More <ArrowForwardIosIcon /> </ButtonView>
       </SecondContainer>
       <Grid container alignItems="stretch" spacing={4}>
         {postData.map((post, index) => (

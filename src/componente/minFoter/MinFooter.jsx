@@ -10,7 +10,7 @@ import './style.css';
 const Container = styled.div`
 display:'none';
 position:relative;
-width:100wv;
+width:100%;
 ${mobile({ display: 'flex' })};
 `
 const Wrapper = styled.div`

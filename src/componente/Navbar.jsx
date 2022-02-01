@@ -15,12 +15,12 @@ const Container = styled.div`
   color:white;
   width:100%;
   ${mobile({ width: '100%' })}
-  ${mobileSmall({ width: '100wv',position:'relative',margin:'0px' })}
+  ${mobileSmall({ width: '100wv',position:'relative' })}
   
 
 `;
 const Wrapper = styled.div`
-padding:10px 20px;
+padding:0.5rem 2rem;
 display:flex;
 `;
 const SecWrapper = styled.div`
@@ -44,17 +44,16 @@ font-weight:900;
 const Right = styled.div`
 flex:1;
 display:flex;
-padding:0px 20px;
+padding:0px 0.5rem;
 align-items:center;
 justify-content:end;
 color:white;
 ${mobile({ padding: '0px', justifySelf: 'end', justifyContent: 'end' })};
 `
 const IconContainer = styled.span`
-padding:10px 10px 0px 10px;
+padding:0.5rem 0.5rem 0rem 0.5rem;
 align-items:center;
 font-size:16px;
-font-weight:bold;
 color:white;
 cursor:pointer;
 `
@@ -207,39 +206,9 @@ const Navebar = () => {
           <ResponsiveIcon>
 
             {renderMenu}
-            {/* <IconContainer>
-              <Button style={{ color: 'white' }}
-                id="fade-button"
-                aria-controls={open ? 'fade-menu' : undefined}
-                aria-haspopup="true"
-                aria-expanded={open ? 'true' : undefined}
-                onClick={handleClick}
-              >
-                <RoomOutlinedIcon />
-                Auckland
-                <KeyboardArrowDownIcon />
-              </Button>
-            </IconContainer> */}
+            
           </ResponsiveIcon>
-          {/* <Menu style={{ color: 'black', border: '1px solid', margin: '0px', display: 'flex', flexDirection: 'column' }}
-            // id="fade-menu"
-            // MenuListProps={{
-            //   'aria-labelledby': 'fade-button',
-            // }}
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            TransitionComponent={Fade}
-          >
-            <MenuItem style={{ color: 'black', border: '0.5px solid', padding: '5px', left: '5px', fontSize: '19px', fontWeight: '600' }} >Waikato</MenuItem>
-            <MenuItem style={{ color: 'black', border: '1px solid', padding: '5px', left: '5px', display: 'flex', flexDirection: 'column' }} >Wellington</MenuItem>
-            <MenuItem style={{ color: 'black', border: '1px solid', padding: '5px', left: '5px', display: 'flex', flexDirection: 'column' }} >Northland</MenuItem>
-            <MenuItem style={{ color: 'black', border: '1px solid', padding: '5px', left: '5px', display: 'flex', flexDirection: 'column' }} >Auckland</MenuItem>
-            <MenuItem style={{ color: 'black', border: '1px solid', padding: '5px', left: '5px', display: 'flex', flexDirection: 'column' }} >Manawatu - Wanganui</MenuItem>
-            <MenuItem style={{ color: 'black', border: '1px solid', padding: '5px', left: '5px', display: 'flex', flexDirection: 'column' }} >Tauranga</MenuItem>
-            <MenuItem style={{ color: 'black', border: '1px solid', padding: '5px', left: '5px', display: 'flex', flexDirection: 'column' }} >Rotorua - Taupoa</MenuItem>
-
-          </Menu> */}
+        
           <SecWrapper>
             <IconContainer>
               <FavoriteBorderIcon />
@@ -248,33 +217,7 @@ const Navebar = () => {
               <ShoppingCartOutlinedIcon />
             </IconContainer>
             {renderMobileMenu}
-            {/* <IconContainer>
-              <Button style={{ color: 'white' }}
-                id="fade-button"
-                aria-controls={open ? 'fade-menu' : undefined}
-                aria-haspopup="true"
-                aria-expanded={open ? 'true' : undefined}
-                onClick={handleClick}
-              >
-                <PermIdentityOutlinedIcon />
-                <KeyboardArrowDownIcon />
-              </Button>
-            </IconContainer> */}
-            {/* <Menu style={{ color: 'black', border: '1px solid', margin: '0px', display: 'flex', flexDirection: 'column' }}
-
-              anchorEl={anchorEl1}
-              open={open1}
-              onClose={handleClose1}
-            // TransitionComponent={Fade}
-            >
-              <MenuItem style={{ color: 'black', border: '1px solid', padding: '5px', left: '5px' }} >My Account</MenuItem>
-              <MenuItem style={{ color: 'black', border: '1px solid', padding: '5px', left: '5px' }} >Gifts</MenuItem>
-              <MenuItem style={{ color: 'black', border: '1px solid', padding: '5px', left: '5px' }} >Profile</MenuItem>
-              <MenuItem style={{ color: 'black', border: '1px solid', padding: '5px', left: '5px' }} >My Subscriptions</MenuItem>
-              <MenuItem style={{ color: 'black', border: '1px solid', padding: '5px', left: '5px' }} >My Purchases</MenuItem>
-              <MenuItem style={{ color: 'black', border: '1px solid', padding: '5px', left: '5px' }} >Logout</MenuItem>
-
-            </Menu> */}
+           
             <IconContainer>
               <span style={{ color: 'white', display: 'flex', alignItems: 'center' }}>
 
@@ -284,34 +227,7 @@ const Navebar = () => {
               </span>
             </IconContainer>
           </SecWrapper>
-          {/* <FormControl sx={{ m: 1, minWidth: 120 }}>
-        <Select style={{ borderStyle: 'none' }}
-          value=""
-          onChange=""
-          displayEmpty
-          inputProps={{ 'aria-label': 'Without label' }}
-        >
-          <MenuItem value="">
-            <RoomOutlinedIcon/>
-            Auckland
-          </MenuItem>
-          <MenuItem >Auckland</MenuItem>
-          <MenuItem >Waikato</MenuItem>
-          <MenuItem >Wellington</MenuItem>
-          <MenuItem >Northland</MenuItem>
-          <MenuItem >Manawatu - Wanganui</MenuItem>
-          <MenuItem >Tauranga</MenuItem>
-          <MenuItem >Rotorua - Taupoa</MenuItem>
-        </Select>
-       
-      </FormControl> */}
-          {/* <MenuItem>Register</MenuItem>
-          <MenuItem>Login</MenuItem>
-          <MenuItem>
-            <Badge badgeContent={4} color="primary">
-              <ShoppingCartOutlinedIcon color="action" />
-            </Badge>
-          </MenuItem> */}
+        
         </Right>
       </Wrapper>
     </Container>

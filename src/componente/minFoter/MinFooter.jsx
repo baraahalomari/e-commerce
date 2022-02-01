@@ -14,6 +14,7 @@ width:100wv;
 ${mobile({ display: 'flex' })};
 `
 const Wrapper = styled.div`
+display:flex;
 width: 100%;
 height: 60px;
 background-color: rgb(250, 250, 250);
@@ -22,6 +23,7 @@ z-index: 999;
 bottom: 0;
 display: none;  
 align-items: center;
+justify-content: center;
 ${mobile({ display: 'flex' })};
 `
 
@@ -30,19 +32,19 @@ const MinFooter = () => {
   <Container>
     <Wrapper >
       <div className="cataguro">
-        <HomeOutlinedIcon/> <p> Home</p>
+        <HomeOutlinedIcon/> <p className="cataguro"> Home</p>
       </div>
       <div className="cataguro">
-        <SearchOutlinedIcon/> <br/> Search
+        <SearchOutlinedIcon/> <p className="cataguro">Search</p> 
       </div>
       <div className="cataguro">
-        <CategoryOutlinedIcon/> <br/> Category
+        <CategoryOutlinedIcon/> <p className="cataguro">Category</p> 
       </div>
       <div className="cataguro">
-        <ShoppingCartOutlinedIcon/><br/>  Cart
+        <ShoppingCartOutlinedIcon/><p className="cataguro"> Cart</p>
       </div>
       <div className="cataguro">
-        <PermIdentityOutlinedIcon/><br/> Account
+        <PermIdentityOutlinedIcon/><p className="cataguro"> Account</p>
       </div>
     </Wrapper>
   </Container>

@@ -61,6 +61,9 @@ color:white;
 background-color:rgb(1,178,238);
 cursor:pointer;
 ${mobile({fontSize:'13px',width:'7rem'})};
+&:hover {
+  background-color: rgb(36,199,254);
+}
 `
 
 const InputEmail = () => {
